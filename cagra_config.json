@@ -1,0 +1,28 @@
+{
+  "paths": {
+    "base": "/usr/paper-code/data/sift100m/100M.bbin",
+    "query": "/usr/paper-code/data/sift100m/bigann_query.bvecs",
+    "groundtruth_source": "/usr/paper-code/data/sift100m/gnd/gnd/idx_100M.ivecs",
+    "groundtruth_top10": "/usr/paper-code/data/sift100m/gnd/gnd/idx_100M_top10.ivecs",
+    "single_index": "/usr/paper-code/data/sift100m/index/sift100m_single.cagra",
+    "sharded_index": "/usr/paper-code/data/sift100m/index/sift100m_sharded.cagra"
+  },
+  "benchmark": {
+    "topk": 10,
+    "warmup": 1,
+    "repetitions": 1
+  },
+  "index_params": {
+    "metric": "sqeuclidean",
+    "graph_degree": null,
+    "intermediate_graph_degree": null,
+    "build_algo": null
+  },
+  "search_params": {
+    "itopk_size": null
+  },
+  "multi_gpu": {
+    "merge_mode": null,
+    "n_rows_per_batch": null
+  }
+}
