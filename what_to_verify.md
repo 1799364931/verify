@@ -2,6 +2,13 @@
 
 使用 `sift-locality` 环境。所有路径与 CAGRA 参数集中在 `cagra_config.json`；默认配置使用 SIFT100M 的 `.bbin`、`.bvecs`、`uint8` 与 `sqeuclidean`。值为 `null` 的图和搜索参数会保留 cuVS 默认值。命令行同名选项优先于配置，适合 batch/merge 扫描。
 
+服务器尚未安装依赖时，先创建独立环境。默认环境名为 `cagra-bench`；可用第一个参数改名。对于多卡 RTX 5090（Blackwell，SM 12.0），脚本默认安装 CUDA 12.9；CUDA 12.8 是 Blackwell 的最低支持版本。创建完成后会输出每张可见卡的名称和 compute capability。 [CUDA 架构兼容矩阵](https://docs.nvidia.com/datacenter/tesla/drivers/cuda-toolkit-driver-and-architecture-matrix.html)
+
+```bash
+bash create_cagra_env.sh
+# 默认创建 cagra-bench；例如改名：bash create_cagra_env.sh sift-locality
+```
+
 创建实验前先复制并修改配置，例如：
 
 ```bash
